@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SITIANS UNIVERSE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js" type="module"></script>
+    
+    <style>
+        :root {
+            --dark-navy: #060e2e;
+            --primary-teal: #06B6D4;
+            --base-violet: white; 
+            --highlight-red: #dfa801; 
+            --light-gray: #000000;
+            --muted-slate: #c2c6cc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-navy); 
+            color: var(--light-gray); 
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .content-container {
+            max-width: 48rem;
+            width: 100%;
+            text-align: center;
+            margin: auto;
+            padding-top: 2.5rem;
+            padding-bottom: 2.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .fly-ani {
+            width: 22rem;
+            height: 22rem;
+            margin-top: -5rem;
+        }
+
+        .main-heading {
+            font-size: 5rem;
+            font-weight: 800;
+            letter-spacing: 0.03em; 
+            color: var(--base-violet); 
+            white-space: nowrap;
+            margin-top: -2rem; 
+            margin-left: -2rem;
+            align-self: center;
+        }
+        
+        .main-heading span {
+            display: inline-block;
+            transition: color 0.1s linear, transform 0.25s ease-out; 
+            color: inherit; 
+        }
+        
+        .main-heading .red-scan {
+            color: var(--highlight-red); 
+            transform: rotatez(360deg) scale(1.1);
+        }
+
+        .subtitle {
+            margin-top: -3rem; 
+            font-size: 1.25rem;
+            color: var(--muted-slate); 
+            font-weight: 500;
+        }
+
+        .cta-wrapper {
+            padding-top: 2rem;
+            display: flex; 
+            justify-content: center; 
+            gap: 1.5rem; 
+        }
+
+        .cta-button {
+            padding: 0.75rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            color: var(--dark-navy); 
+            background-color: var(--primary-teal); 
+            transition: all 0.3s ease-in-out;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: rgb(0, 94, 0); 
+            transform: translateY(-4px);
+            color: white;
+            border: 1px solid white;
+        }
+
+        .loading-container {
+            text-align: center;
+            color: white;
+            display: none;
+            flex-direction: column;
+        }
+
+        .loading-animation {
+            width: 50rem;
+            padding: 0rem 1rem;
+        }
+
+        /* ==================== MEDIA QUERIES (PHONE) ==================== */
+        @media screen and (max-width: 900px) {
+            .main-heading {
+                margin-left: -4rem;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .fly-ani {
+                margin-top: -10rem;
+            }
+
+            .main-heading {
+                font-size: 2.2rem; 
+                color: var(--base-violet); 
+                white-space: nowrap;
+                margin-top: 0rem; 
+                margin-left: -2rem;
+                align-self: center;
+            }
+
+            .subtitle {
+                margin-top: -0.5rem; 
+                /* margin-bottom: 10rem; */
+                font-size: 1.2rem;
+                line-height: 1.8rem;
+            }
+
+            .cta-button {
+                margin-top: 5rem;
+            }
+
+            .loading-animation {
+                width: 100%;
+            }
+
+            .load-txt {
+                font-size: 1.5rem;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="content-container">
+        <div class="header-section">   
+            <dotlottie-wc src="https://lottie.host/6ef3ca02-8151-44fb-a53e-d92bb9ec8181/alN8PMqttd.lottie" class="fly-ani" autoplay loop></dotlottie-wc>
+            <h1 class="main-heading">
+                SITIANS UNIVERSE
+            </h1>
+            <p class="subtitle">
+                Connect with your friends of SIT College. (2025-2029)
+            </p>
+        </div>
+
+        <div class="lottie-container">
+            <lottie-player
+                id="college-animation"
+                src="https://lottie.host/5a2d677a-a53f-42e7-91f8-9577742188fa/u9W84w94m4.json"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay
+            ></lottie-player>
+        </div>
+
+        <div class="cta-wrapper">
+            <button class="cta-button" id="explore-btn">
+                Explore
+            </button>
+        </div>
+    </div>
+
+    <div class="loading-container">
+        <dotlottie-wc  src="https://lottie.host/325c38b9-808d-47b3-b323-ac0ef0d441e9/cd7DYS4WiZ.lottie" class="loading-animation"  autoplay  loop></dotlottie-wc>
+        <h1 class="main-heading load-txt">Loading...</h1>
+    </div>
+
+    <script>
+        alert("ATTENTION: This is not an official website. This space is exclusively for connecting and sharing information among friends.");
+        function wrapLetters(element) {
+            const text = element.textContent;
+            element.innerHTML = text
+                .split('')
+                .map(char => {
+                    return `<span>${char === ' ' ? '&nbsp;' : char}</span>`;
+                })
+                .join('');
+            return element.querySelectorAll('span');
+        }
+
+        function startScanAnimation(letters) {
+            if (letters.length === 0) return;
+
+            let currentIndex = 0;
+            let isBuildingUp = true; 
+            const scanInterval = 200; 
+
+            function animate() {
+                if (isBuildingUp) {
+                    if (currentIndex < letters.length) {
+                        letters[currentIndex].classList.add('red-scan');
+                        currentIndex++;
+                    } else {
+                        isBuildingUp = false;
+                        currentIndex = 0; 
+                    }
+                } else {
+                    if (currentIndex < letters.length) {
+                        letters[currentIndex].classList.remove('red-scan');
+                        currentIndex++;
+                    } else {
+                        isBuildingUp = true;
+                        currentIndex = 0; 
+                    }
+                }
+            }
+
+            setInterval(animate, scanInterval);
+        }
+
+        
+        setTimeout(() => {
+            const heading = document.querySelector('.main-heading');
+            const letters = wrapLetters(heading);
+            startScanAnimation(letters);
+        }, 300);
+
+        const exploreButton = document.getElementById('explore-btn');
+        const contentContainer = document.querySelector('.content-container');
+        const loadingContainer = document.querySelector('.loading-container');
+
+        exploreButton.addEventListener('click', function() {
+            contentContainer.style.display = 'none';
+            loadingContainer.style.display = 'flex';
+
+            setTimeout(function() {
+                window.location.href = 'classmate.html';
+            }, 2500); 
+        });
+    </script>
+    
+</body> 
+</html>   
