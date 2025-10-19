@@ -1,0 +1,403 @@
+:root {
+    --color-primary: #6c63ff;
+    --btn-backgroun:#cfbc2b;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-bg: #1f2641;
+    --color-bg1: #2e3267;
+    --color-bg2: #424890;
+    --social-bg: radial-gradient( circle 404px at 20.3% 15.9%, rgba(0,79,255,1) 0%, rgba(0,240,255,1) 90% );
+    --box--bg: linear-gradient(135deg, #8830c6, #6d17f9, #8830c6);
+    --hover: radial-gradient( circle farthest-corner at -1.2% 43.9%, rgb(241, 82, 8) 16.1%, rgb(231, 3, 3) 74.3% );
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sd: 94%;
+    --transition: all 400ms ease;
+}
+
+/* ==================== Global & Base Styles ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.7;
+    color: var(--color-white);
+    background: var(--color-bg);
+    padding-top: 5rem; 
+} 
+
+.container {
+    width: var(--container-width-lg);
+    margin: 0 auto;
+}
+
+section {
+    padding: 4rem 0;
+}
+
+section h2 {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 4rem;
+    padding: 0.5rem 2rem;
+    color: black;
+    border: 2px solid var(--color-white); 
+    background-color: var(--btn-backgroun);
+    border-radius: 8px;
+}
+
+h1, h2, h3, h4, h5 {
+    line-height: 1.2;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+a {
+    color: var(--color-white);
+}
+
+/* ==================== Header & Navigation Styles (Responsive) ==================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 999;
+    background: var(--box--bg); 
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 5%;
+}
+
+.h-logo {
+    display: flex;
+    align-items: center; 
+    gap: 1rem;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.logo {
+    width: 45px;
+    height: 40px; 
+    border-radius: 50%;
+}
+
+#menu-btn {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-white);
+    cursor: pointer;
+    display: none; 
+    z-index: 101; 
+}
+
+/* Desktop Default Navigation */
+#menu-nav {
+    position: static; 
+    width: auto;
+    background: none; 
+    box-shadow: none;
+    display: block;
+    transition: none;
+}
+
+.nav__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    align-items: center;
+    gap: 1.5rem; 
+}
+
+.nav__links li {
+    padding: 0; 
+    border: none; 
+}
+
+.nav__links li:hover {
+    background: none; 
+}
+
+.nav__links a {
+    text-decoration: none;
+    color: var(--color-white); 
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.5rem 0; 
+    position: relative;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.nav__links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-white);
+    transition: width 0.3s ease;
+}
+
+.nav__links a:hover::after,
+.nav__links a.active::after {
+    width: 100%;
+}
+
+.nav__links a:hover {
+    color: var(--btn-backgroun); 
+}
+
+
+/* ==================== Team Section Styles ==================== */
+.sec-txt {
+    text-align: center;
+    margin-top: 0rem;
+}
+
+.team {
+    margin-top: 0rem;
+    background: var(--color-bg1);
+    box-shadow: inset 0 0 3rem rgba(0, 0, 0, 0.5);
+}
+
+.team__container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+}
+
+.team__member {
+    background: var(--color-bg2);
+    padding: 1.5rem;
+    border: 3px solid transparent; 
+    border-radius: 1rem;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); 
+}
+
+.team__member:hover {
+    background: var(--box--bg);
+    border-color: rgba(255, 255, 255, 0.832);
+}
+
+.team__member__image img {
+    filter: saturate(0);
+    border-radius: 1rem;
+    width: 100%;
+    height: 15rem;
+    object-fit: cover; 
+    transition: var(--transition); 
+}
+
+.team__member:hover img {
+    filter: saturate(1);
+    border: 2px solid rgb(235, 220, 220);
+}
+
+.team__member__info {
+    text-align: center;
+    margin-top: 1.2rem;
+}
+
+.team__member__info p {
+    color: var(--color-light);
+    margin-top: 0.7rem;
+    font-size: 0.9rem; 
+}
+
+.team__member__socials {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--social-bg); 
+    border-radius: 1rem 0 0 1rem;
+    border: 2px solid white;
+    box-shadow: -2rem 0 2rem rgba(0, 0, 0, 0.5);
+    transition: var(--transition);
+}
+
+.team__member:hover .team__member__socials {
+    right: 0;
+}
+
+.team__member__socials a {
+    padding: 1rem;
+    transition: var(--transition);
+}
+
+.team__member__socials a:hover {
+    background: var(--hover); 
+    border-radius: 0.8rem;
+}
+
+footer {
+    border-top: 1px solid var(--color-white);
+    background: var(--color-bg2);
+    text-align: center;
+    padding: 0.5rem;
+    position: static;
+}
+
+
+/* ==================== MEDIA QUERIES (TABLET - max-width: 1024px) ==================== */
+@media screen and (max-width: 1024px) {
+    .container {
+        width: var(--container-width-md);
+    }
+    
+    /* Navigation Reversion (Dropdown) */
+    #menu-btn {
+        display: block;
+    }
+
+    #menu-nav {
+        position: absolute;
+        top: 80%;
+        right: 5.5rem;
+        width: 12rem;
+        background: var(--color-white); 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 1rem 4px 1rem 1rem ;
+        z-index: 100;
+        overflow: hidden;
+        display: none; 
+        transition: all 0.3s ease-in-out;
+    }
+
+    #menu-nav.show-menu {
+        display: none; 
+    }
+
+    .nav__links {
+        display: block; 
+        text-align: center;
+    }
+
+    .nav__links li {
+        padding: 1rem 0;
+        border: 0.5px solid #4f3e3e; 
+    }
+
+    .nav__links li:hover {
+        background: var(--btn-backgroun); 
+    }
+    
+    .nav__links a {
+        color: black; 
+        padding: 0rem 1rem;
+        font-size: 1.1rem;
+    }
+
+    .nav__links a::after {
+        display: none; 
+    }
+    
+    .nav__links a:hover {
+        color: black; 
+    }
+
+    /* Team Section Adjustments */
+    .team__container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem; 
+    }
+
+    .team__member {
+        padding: 1rem;
+    }
+
+    .team__member__image img {
+        height: 30rem;
+    }
+}
+
+/* ==================== MEDIA QUERIES (PHONE - max-width: 600px) ==================== */
+@media screen and (max-width: 600px) {
+    .container {
+        width: var(--container-width-sd);
+    }
+    
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .sec-txt h2 {
+        font-size: 1.1rem;
+    }
+    
+    #menu-nav {
+        width: 40%;
+        right: 2rem;
+    }
+
+    .team__container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .team__member {
+        padding: 0.5rem;
+    }
+    
+    .team__member__info h4 {
+        font-size: 1rem;
+    }
+    
+    .team__member p {
+        font-size: 0.8rem;
+        margin-bottom: 0.2rem;
+        margin-top: 0.3rem; 
+    }
+
+    .team__member:hover {
+        border: 2px solid var(--color-primary); 
+    }
+    
+    .team__member__image img {
+        height: 10rem;
+    }
+
+    footer {
+        font-size: 0.7rem;
+        padding: 0.2rem;
+    }
+}
