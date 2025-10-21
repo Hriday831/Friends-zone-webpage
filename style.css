@@ -24,6 +24,7 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -396,8 +397,17 @@ footer {
         height: 10rem;
     }
 
+    .team__member__socials {
+        height: 75%;
+    }
+
+    .team__member__socials a {
+        padding: 0.5rem 1rem;
+    }
+
     footer {
         font-size: 0.7rem;
         padding: 0.2rem;
     }
+
 }
