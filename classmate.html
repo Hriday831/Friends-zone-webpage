@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SITIANS UNIVERSE</title>
 
-    <!-- ========== cdn link for icons ================= -->
+     <!-- ========== cdn link for icons ================= -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
 
     <!-- ========== cdn link for google fonts ================= -->
@@ -35,6 +35,13 @@
             </nav>
         </div>
     </header>
+
+    <div class="search-container search-btn-tablet">
+        <button id="search-icon" aria-label="Search">
+            <i class="uil uil-search"></i>
+        </button>
+        <input type="text" id="search-input" placeholder="Search by Name or Roll">
+    </div>
 
     <section class="team" id="section-a">
         <div class="sec-txt">
@@ -231,42 +238,14 @@
 
     <footer>
         <div>
-            <p>@ Developed by Hriday Kundu </p>
+            <p>@ Developed by Hriday Kundu. </p>
         </div>       
     </footer>
 
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const menuNav = document.getElementById('menu-nav');
-
-        const toggleMenu = () => {
-            menuNav.classList.toggle('show-menu');
-            
-            const icon = menuBtn.querySelector('i');
-            if (menuNav.classList.contains('show-menu')) {
-                icon.classList.remove('uil-bars');
-                icon.classList.add('uil-times');
-                menuNav.style.display='block';
-            } else {
-                icon.classList.remove('uil-times');
-                icon.classList.add('uil-bars');
-                menuNav.style.display='none';
-            }
-        };
-
-        menuBtn.addEventListener('click', toggleMenu);
-
-        const navLinks = menuNav.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 1024) { 
-                    toggleMenu();
-                }
-            });
-        });
-    </script>
-
+    <!------link with javascript file------>
+    <script src="classmate.js"></script>
 </body>
 
 </html>
+
 
