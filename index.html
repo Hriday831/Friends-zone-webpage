@@ -246,17 +246,29 @@
         const contentContainer = document.querySelector('.content-container');
         const loadingContainer = document.querySelector('.loading-container');
 
+        function generateRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        const MIN_VALUE = 1500;
+        const MAX_VALUE = 2500;
+        const loading_time = generateRandomInt(MIN_VALUE, MAX_VALUE);
+
         exploreButton.addEventListener('click', function() {
             contentContainer.style.display = 'none';
             loadingContainer.style.display = 'flex';
 
             setTimeout(function() {
                 window.location.href = 'classmate.html';
-            }, 2500); 
+            }, loading_time); 
         });
     </script>
     
 </body> 
 
 </html>   
+
 
