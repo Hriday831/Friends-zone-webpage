@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SITIANS UNIVERSE</title>
+    <title>Classmate-cse</title>
 
-     <!-- ========== cdn link for icons ================= -->
+    <!-- ========== cdn link for icons ================= -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.2.0/css/line.css">
 
     <!-- ========== cdn link for google fonts ================= -->
@@ -15,12 +15,13 @@
     
     <!-- ========== link with css ================= -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <header>
         <div class="h-logo">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4NUos6XU7LQHxXwxTdReYPZjIMBuvLt1ChQ&s" class="logo" alt="Class Logo">
-            <h2 class="title">Know Your Classmate</h2>
+            <h2 class="title" class="animation">𝐒𝐈𝐓𝐈𝐀𝐍 𝐔𝐍𝐈𝐕𝐄𝐑𝐒𝐄</h2>
         </div> 
 
         <div class="menu-container">
@@ -29,12 +30,13 @@
             <nav id="menu-nav">
                  <ul class="nav__links">
                     <!--==========here you can add more section========= -->     
-                    <li><a href="#section-a">Section A</a></li>    
-                    <li><a href="#section-b">Section B</a></li>
+                    <li><a href="#section-a">Section-A</a></li>    
+                    <li><a href="#section-b">Section-B</a></li>
 
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc1zyaCRDQE4BGppSedoGXl69OkGKWAP-ceVkgPtkdV8Cm-SA/viewform?usp=dialog" target="_blank">Add_Me</a></li>
                 </ul>
             </nav>
+            
         </div>
     </header>
 
@@ -45,125 +47,37 @@
         <input type="text" id="search-input" placeholder="Search by Name or Roll">
     </div>
 
+    <!----birthday wish container ----->
+    <div id="btwcardContainer" class="btw-card-container">  
+        <div class="btw-birthday-card">
+            
+            <button class="btw-close-button" id="btw-close-button">
+                <i class="uil uil-times"></i>
+            </button>
+
+            <div class="btw-lottie-container">
+                <dotlottie-wc   src="https://lottie.host/305ad90a-8df0-4dd2-a774-71a7e3984856/UsEiZZ1zO4.lottie" style="width: 250px;height: 250px" autoplay loop></dotlottie-wc>
+            </div>
+            
+            <h1 class="btw-person-name">
+                Happy Birthday<br><span class="animation" id="btw-person-name"></span>
+            </h1>
+
+            <p class="btw-wish-text" id="birthday-wish">
+                <!---- birthday wish show using js ----->
+            </p>
+        </div>
+    </div>
+    <!---- end birthday wish container ----->
+
     <section class="team" id="section-a">
         <div class="sec-txt">
             <h2>Section A</h2>
         </div>
         
-        <div class="container team__container">
-            <article class="team__member">
-                <div class="team__member__image">
-                    <img src="./Assets/hriday.jpeg" alt="Hriday Kundu">
-                </div>
-                <div class="team__member__info">
-                    <h4>Hriday Kundu</h4>
-                    <p>Dept- CSE, Roll- 49</p>
-                </div>
-                <div class="team__member__socials">
-                    <a href="https://www.facebook.com/hridoy.kundu.127" target="_blank" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/hriday_kundu5?igsh=OTRpMWRxZXFsb2Q0" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/hriday-kundu-5646b2379/" target="_blank" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="https://github.com/Hriday831" target="_blank" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-
-            <article class="team__member">
-                <div class="team__member__image">
-                    <img src="./Assets/kunal42.jpeg" alt="Kunal Mandal">
-                </div>
-                <div class="team__member__info">
-                    <h4>Kunal Mandal</h4>
-                    <p>Dept- CSE, Roll- 42</p>
-                </div>
-                <div class="team__member__socials">
-                    <a href="#"  aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/kun_al_31?igsh=MWUyeThtbGxzNWpxeA==" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
-                    <a href="#"  aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="#"  aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-
-            <article class="team__member">
-                <div class="team__member__image">
-                    <img src="./Assets/rahul43.jpeg" alt="Rahul Rakhit">
-                </div>
-                <div class="team__member__info">
-                    <h4>Rahul Rakhit</h4>
-                    <p>Dept- CSE, Roll- 43</p>
-                </div>
-                <div class="team__member__socials">
-                    <a href="#"  aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/rr_elite_og?igsh=MTFxc2lpejN6dnc4MA==" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/rahul-rakshit-a1159b374?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="#" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-
-            <article class="team__member">
-                <div class="team__member__image">
-                    <img src="./Assets/aditi12.jpeg" alt="aditi das">
-                </div>
-                <div class="team__member__info">
-                    <h4>Aditi Das</h4>
-                    <p>Dept- CSE, Roll- 12</p>
-                </div>
-                <div class="team__member__socials">
-                    <a href="https://www.facebook.com/share/1CqMeN491s/" target="_blank" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/awwditih?igsh=MTVpc3UzYWlqaGxudA==" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/aditi-das-6743b9379?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="https://github.com/aditidas15" target="_blank" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-
-            <article class="team__member">
-                <div class="team__member__image">
-                    <img src="./Assets/mainak47.jpeg" alt="mainak kundu">
-                </div>
-                <div class="team__member__info">
-                    <h4>Mainak Kundu</h4>
-                    <p>Dept- CSE, Roll- 47</p>
-                </div>
-                <div class="team__member__socials">
-                    <a href="#" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/1mperfection._?igsh=aGpxMzZkNW9oOXZ4" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/mainakkundu2006/" target="_blank" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="https://www.github.com/Mainak-2006" target="_blank" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-
-            <article class="team__member">
-                <div class="team__member__image">
-                    <img src="./Assets/Rinku Singha-A-51.jpeg" alt="rinku singha">
-                </div>
-                <div class="team__member__info">
-                    <h4>Rinku Singha</h4>
-                    <p>Dept- CSE, Roll- 51</p>
-                </div>
-                <div class="team__member__socials">
-                    <a href="#" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/dam_itx.rinku?igsh=aWlxbW1uajNla2U5&utm_source=qr" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
-                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="#" target="_blank" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-
-            <article class="team__member">
-                <div class="team__member__image">
-                    <img src="./Assets/Madhushree Mishra.jpg" alt="Madhushree Mishra">
-                </div>
-                <div class="team__member__info">
-                    <h4>Madhushree Mishra</h4>
-                    <p>Dept- CSE, Roll- 41</p>
-                </div>
-                <div class="team__member__socials">
-                    <a href="#" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/kaizen._10?igsh=MWh2dDZscThhYWp5MQ==" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
-                    <a href="#"  aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="#"  aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-
-        </div>
+        <div class="container team__container" id="card-container-A">
+            <!-----card created dynamically using javascript------->
+        </div>       
     </section>
 
     <section class="team" id="section-b">
@@ -171,104 +85,12 @@
             <h2>Section B</h2>
         </div>
         
-        <div class="container team__container">
-            <article class="team__member">
-                <div class="team__member__image">
-                    <img src="https://www.theloverspoint.com/wp-content/uploads/2025/05/attitude-girl-pic.jpg" alt="">
-                </div>
-                <div class="team__member__info">
-                    <h4>Name</h4>
-                    <p>Dept- aaa, Roll- 00</p>
-                </div>
-                <div class="team__member__socials">
-                    <a href="#" target="_blank" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
-                    <a href="#" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
-                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="#" target="_blank" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-
-            <article class="team__member">
-                <div class="team__member__image">
-                    <img src="https://www.theloverspoint.com/wp-content/uploads/2025/05/attitude-girl-pic.jpg" alt="">
-                </div>
-                <div class="team__member__info">
-                    <h4>Name</h4>
-                    <p>Dept- aaa, Roll- 00</p>
-                </div>
-                <div class="team__member__socials">
-                    <a href="#" target="_blank" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
-                    <a href="#" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
-                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="#" target="_blank" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-
-            <article class="team__member">
-                <div class="team__member__image">
-                    <img src="https://www.theloverspoint.com/wp-content/uploads/2025/05/attitude-girl-pic.jpg" alt="">
-                </div>
-                <div class="team__member__info">
-                    <h4>Name</h4>
-                    <p>Dept- aaa, Roll- 00</p>
-                </div>
-                <div class="team__member__socials">
-                    <a href="#" target="_blank" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
-                    <a href="#" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
-                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="#" target="_blank" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-
-            <article class="team__member">
-                <div class="team__member__image">
-                    <img src="https://www.theloverspoint.com/wp-content/uploads/2025/05/attitude-girl-pic.jpg" alt="">
-                </div>
-                <div class="team__member__info">
-                    <h4>Name</h4>
-                    <p>Dept- aaa, Roll- 00</p>
-                </div>
-                <div class="team__member__socials">
-                    <a href="#" target="_blank" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
-                    <a href="#" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
-                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="#" target="_blank" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-
-            <article class="team__member">
-                <div class="team__member__image">
-                    <img src="https://www.theloverspoint.com/wp-content/uploads/2025/05/attitude-girl-pic.jpg" alt="">
-                </div>
-                <div class="team__member__info">
-                    <h4>Name</h4>
-                    <p>Dept- aaa, Roll- 00</p>
-                </div>
-                <div class="team__member__socials">
-                    <a href="#" target="_blank" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
-                    <a href="#" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
-                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="#" target="_blank" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
-
-            <article class="team__member">
-                <div class="team__member__image">
-                    <img src="https://www.theloverspoint.com/wp-content/uploads/2025/05/attitude-girl-pic.jpg" alt="">
-                </div>
-                <div class="team__member__info">
-                    <h4>Name</h4>
-                    <p>Dept- aaa, Roll- 00</p>
-                </div>
-                <div class="team__member__socials">
-                    <a href="#" target="_blank" aria-label="Facebook"><i class="uil uil-facebook-f"></i></a>
-                    <a href="#" target="_blank" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
-                    <a href="#" target="_blank" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
-                    <a href="#" target="_blank" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
-                </div>
-            </article>
+        <div class="container team__container" id="card-container-B">
+            <!-----card created dynamically using javascript------->
         </div>
     </section>
+
+   
 
     <footer>
         <div>
@@ -281,6 +103,7 @@
 </body>
 
 </html>
+
 
 
 
