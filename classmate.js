@@ -77,6 +77,17 @@ const friends = [
         github : "#"
     },
     {
+        name : "Aniket Das",
+        dept : "CSE",
+        sec : "A",
+        roll : "26",
+        image : "aniketdas.jpeg",
+        facebook : "#",
+        instagram : "https://www.instagram.com/anike_tdas1729?utm_source=qr&igsh=OGNuOHc0YW9hazFx",
+        linkedin : "https://www.linkedin.com/in/aniket-das-81434a380?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        github : "#"
+    },
+    {
         name : "demo name",
         dept : "CSE",
         sec : "B",
@@ -337,3 +348,4 @@ document.addEventListener('DOMContentLoaded', function() {
         btw_container.style.display = "none";
     }
 });
+
