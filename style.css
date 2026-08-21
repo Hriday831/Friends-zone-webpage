@@ -274,6 +274,197 @@ footer {
     position: static;
 }
 
+/* ==================== Birthday Counter ==================== */
+.birthdaycountercountea {
+    width: min(1100px, var(--container-width-lg));
+    margin: 2rem auto 0;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #292f68, #202544);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+    scroll-margin-top: 6rem;
+}
+
+.birthdaycountercountea[hidden] {
+    display: none;
+}
+
+.bd_header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.bd-kicker {
+    color: #f4d35e;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.bd_header h1 {
+    font-size: clamp(1.5rem, 3vw, 2.3rem);
+}
+
+.bd-name-search {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: min(100%, 250px);
+    padding: 0.65rem 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    border-radius: 0.6rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.bd-input {
+    width: 100%;
+    color: white;
+    background: transparent;
+    font: inherit;
+}
+
+.bd-input::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.heading-container,
+.birthday-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(100px, 0.8fr) minmax(110px, 0.8fr);
+    align-items: center;
+    gap: 1rem;
+    padding: 0.9rem 1rem;
+}
+
+.heading-container {
+    color: rgba(255, 255, 255, 0.62);
+    border-bottom: 2px solid #f4d35e;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.heading-container p:nth-child(2),
+.heading-container p:nth-child(3),
+.birthday-row .birthday-date,
+.birthday-row strong {
+    text-align: center;
+}
+
+.birthday-list {
+    display: grid;
+}
+
+.birthday-row {
+    width: 100%;
+    margin-bottom: 0.55rem;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 0.75rem;
+    background: rgba(255, 255, 255, 0.035);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: background 200ms ease, padding 200ms ease;
+}
+
+.birthday-row:nth-child(even) {
+    background: rgba(67, 213, 191, 0.09);
+}
+
+.birthday-row:nth-child(3n) {
+    background: rgba(255, 126, 95, 0.1);
+}
+
+.birthday-row:hover,
+.birthday-row:focus-visible {
+    padding-left: 1.3rem;
+    background: rgba(244, 211, 94, 0.14);
+}
+
+.birthday-row strong {
+    color: #f4d35e;
+}
+
+.mobile-countdown {
+    display: none;
+}
+
+.birthday-date {
+    color: #70e1d1;
+    font-weight: 700;
+}
+
+.short-month {
+    display: none;
+}
+
+.birthday-member-name {
+    overflow: hidden;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 600px) {
+    .birthdaycountercountea {
+        width: var(--container-width-sd);
+        margin-top: 1rem;
+        padding: 1.1rem 0.75rem;
+        border-radius: 0.75rem;
+    }
+
+    .bd_header {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .bd-name-search {
+        width: 100%;
+    }
+
+    .heading-container,
+    .birthday-row {
+        grid-template-columns: minmax(0, 1.3fr) minmax(66px, 0.7fr) minmax(74px, 0.75fr);
+        gap: 0.45rem;
+        padding: 0.8rem 0.45rem;
+        font-size: 0.78rem;
+    }
+
+    .heading-container {
+        font-size: 0.58rem;
+    }
+
+    .heading-container p:nth-child(2),
+    .heading-container p:nth-child(3),
+    .birthday-row .birthday-date,
+    .birthday-row strong {
+        text-align: center;
+    }
+
+    .desktop-countdown {
+        display: none;
+    }
+
+    .mobile-countdown {
+        display: inline;
+    }
+
+    .long-month {
+        display: none;
+    }
+
+    .short-month {
+        display: inline;
+    }
+}
+
 /* --- Search Container --- */
 .search-container {
     display: flex;
@@ -516,6 +707,16 @@ footer {
     z-index: 999;   
 }
 
+.btw-card-container.btw-card-visible {
+    display: flex !important;
+}
+
+.btw-card-container.btw-card-closed {
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+}
+
 .btw-birthday-card {
     top: 5rem;
     position: absolute;
@@ -610,4 +811,3 @@ footer {
     text-shadow: 0px 0px 8px rgba(120, 243, 107, 0.578); 
   }
 }
-
