@@ -149,6 +149,29 @@ const wishes = [
 const randomIndex = Math.floor(Math.random() * wishes.length);
 const randomWish = wishes[randomIndex];
 
+function getBirthdayDetails(person, referenceDate = new Date()) {
+    const [day, month] = person.dob.split('/').map(Number);
+    const birthday = new Date(referenceDate.getFullYear(), month - 1, day);
+
+    if (birthday < referenceDate) {
+        birthday.setFullYear(birthday.getFullYear() + 1);
+    }
+
+    const remainingMilliseconds = Math.max(0, birthday - referenceDate);
+    const totalHours = Math.floor(remainingMilliseconds / 3600000);
+    const remainingDays = Math.floor(totalHours / 24);
+    const remainingHours = totalHours % 24;
+    return { ...person, remainingDays, remainingHours, totalHours };
+}
+
+function formatBirthdayDate(date) {
+    const [day, month] = date.split('/').map(Number);
+    const monthDate = new Date(2000, month - 1, 1);
+    const longMonthName = monthDate.toLocaleString('en-US', { month: 'long' });
+    const shortMonthName = monthDate.toLocaleString('en-US', { month: 'short' });
+    return `<span class="long-month">${day} ${longMonthName}</span><span class="short-month">${day} ${shortMonthName}</span>`;
+}
+
 
 
 // function to create card
@@ -286,6 +309,62 @@ document.addEventListener('DOMContentLoaded', function() {
 // end search icon toggle code
 
 document.addEventListener('DOMContentLoaded', function() {
+    const birthdaySection = document.getElementById('birthday-counter');
+    const birthdayNavLink = document.getElementById('birthday-nav-link');
+    const birthdayList = document.getElementById('birthday-list');
+    const birthdaySearch = document.getElementById('bd-search');
+    const birthdayModal = document.getElementById('btwcardContainer');
+    const birthdayModalName = document.getElementById('btw-person-name');
+    const birthdayModalWish = document.getElementById('birthday-wish');
+
+    if (!birthdaySection || !birthdayNavLink || !birthdayList) return;
+
+    const birthdayMembers = classmates
+        .map(person => getBirthdayDetails(person))
+        .sort((first, second) => first.totalHours - second.totalHours || first.name.localeCompare(second.name));
+
+    const openBirthdayModal = person => {
+        birthdayModalName.textContent = person.name;
+        birthdayModalWish.textContent = wishes[Math.floor(Math.random() * wishes.length)];
+        birthdayModal.style.display = 'flex';
+        birthdayModal.classList.remove('btw-card-closed');
+        birthdayModal.classList.add('btw-card-visible');
+    };
+
+    const renderBirthdays = query => {
+        const normalizedQuery = query.trim().toLowerCase();
+        birthdayList.innerHTML = '';
+
+        birthdayMembers
+            .filter(person => person.name.toLowerCase().includes(normalizedQuery))
+            .forEach(person => {
+                const row = document.createElement('button');
+                row.type = 'button';
+                row.className = 'birthday-row';
+                const desktopCountdown = person.remainingDays === 0 && person.remainingHours === 0
+                    ? 'Today'
+                    : `${person.remainingDays} days, ${person.remainingHours} hours`;
+                const mobileCountdown = person.remainingDays === 0 ? 'Today' : `${person.remainingDays} days`;
+                row.innerHTML = `<span class="birthday-member-name">${person.name}</span><span class="birthday-date">${formatBirthdayDate(person.dob)}</span><strong><span class="desktop-countdown">${desktopCountdown}</span><span class="mobile-countdown">${mobileCountdown}</span></strong>`;
+                row.addEventListener('click', () => openBirthdayModal(person));
+                birthdayList.appendChild(row);
+            });
+    };
+
+    const revealBirthdaySection = event => {
+        event.preventDefault();
+        birthdaySection.hidden = false;
+        birthdaySection.classList.add('birthday-section-visible');
+        birthdayNavLink.setAttribute('aria-expanded', 'true');
+        birthdaySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    birthdayNavLink.addEventListener('click', revealBirthdaySection);
+    birthdaySearch?.addEventListener('input', event => renderBirthdays(event.target.value));
+    renderBirthdays('');
+});
+
+document.addEventListener('DOMContentLoaded', function() {
 
     const btw_container = document.getElementById('btwcardContainer');
     const btw_close_btn = document.getElementById('btw-close-button');
@@ -300,6 +379,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     btw_container.style.display = "none";
                     btw_container.classList.remove('btw-card-closed');
+                    btw_container.classList.remove('btw-card-visible');
                 }, 500); 
             }
         });
@@ -348,4 +428,3 @@ document.addEventListener('DOMContentLoaded', function() {
         btw_container.style.display = "none";
     }
 });
-
