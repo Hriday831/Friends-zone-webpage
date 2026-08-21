@@ -32,7 +32,7 @@
                     <!--==========here you can add more section========= -->     
                     <li><a href="#section-a">Section-A</a></li>    
                     <li><a href="#section-b">Section-B</a></li>
-
+                    <li><a href="#birthday-counter" id="birthday-nav-link" aria-controls="birthday-counter" aria-expanded="false">Birthday</a></li>
                     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc1zyaCRDQE4BGppSedoGXl69OkGKWAP-ceVkgPtkdV8Cm-SA/viewform?usp=dialog" target="_blank">Add_Me</a></li>
                 </ul>
             </nav>
@@ -70,6 +70,30 @@
     </div>
     <!---- end birthday wish container ----->
 
+    <!-----Birthday Wish Container----->
+    <section class="birthdaycountercountea" id="birthday-counter" aria-labelledby="birthday-counter-title" hidden>
+        <div class="bd_header">
+            <div>
+                <p class="bd-kicker">Classmate calendar</p>
+                <h1 id="birthday-counter-title">Birthday Counter</h1>
+            </div>
+            <div class="bd-name-search">
+                <i class="uil uil-search"></i>
+                <input type="text" id="bd-search" placeholder="Search by name" class="bd-input">
+            </div>
+        </div>
+
+        <div class="bd_body">
+            <div class="heading-container">
+                <p>Name</p>
+                <p>Birthday Date</p>
+                <p>Remaining Days</p>
+            </div>
+            <div id="birthday-list" class="birthday-list" aria-live="polite"></div>
+        </div>
+    </section>
+    <!-----Birthday Wish Container end----->
+
     <section class="team" id="section-a">
         <div class="sec-txt">
             <h2>Section A</h2>
@@ -104,7 +128,6 @@
 </body>
 
 </html>
-
 
 
 
